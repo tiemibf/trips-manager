@@ -1,5 +1,5 @@
-version: "2",
-sql: 
+version: "2"
+sql:
   - engine: "postgresql"
     queries: "./queries"
     schema: "./migrations"
