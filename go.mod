@@ -13,6 +13,7 @@ require (
 	github.com/jackc/pgx v3.6.2+incompatible
 	github.com/jackc/pgx/v5 v5.6.0
 	github.com/phenpessoa/gutils v0.0.0-20240130030144-d391b9329afd
+	github.com/wneessen/go-mail v0.4.2
 	go.uber.org/zap v1.27.0
 )
 
