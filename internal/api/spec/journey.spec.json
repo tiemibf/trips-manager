@@ -502,15 +502,50 @@
       "CreateTripRequest": {
         "type": "object",
         "properties": {
-          "destination": { "type": "string", "minLength": 4 },
-          "starts_at": { "type": "string", "format": "date-time" },
-          "ends_at": { "type": "string", "format": "date-time" },
+          "destination": {
+            "type": "string",
+            "minLength": 4,
+            "x-go-extra-tags": {
+              "validate": "required,min=4"
+            }
+          },
+          "starts_at": {
+            "type": "string",
+            "format": "date-time",
+            "x-go-extra-tags": {
+              "validate": "required"
+            }
+          },
+          "ends_at": {
+            "type": "string",
+            "format": "date-time",
+            "x-go-extra-tags": {
+              "validate": "required"
+            }
+          },
           "emails_to_invite": {
             "type": "array",
-            "items": { "type": "string", "format": "email" }
+            "x-go-extra-tags": {
+              "validate": "required,dive,email"
+            },
+            "items": {
+              "type": "string",
+              "format": "email"
+            }
           },
-          "owner_name": { "type": "string" },
-          "owner_email": { "type": "string", "format": "email" }
+          "owner_name": {
+            "type": "string",
+            "x-go-extra-tags": {
+              "validate": "required"
+            }
+          },
+          "owner_email": {
+            "type": "string",
+            "format": "email",
+            "x-go-extra-tags": {
+              "validate": "required,email"
+            }
+          }
         },
         "required": [
           "destination",
